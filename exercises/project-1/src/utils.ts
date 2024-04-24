@@ -1,7 +1,9 @@
 // Part 1
 // -----------
 
-export const showResult = (classes: {class: string; score: number; }[]) => {
+import { DetectedObject } from "@tensorflow-models/coco-ssd";
+
+export const showResult = (classes: DetectedObject[]) => {
   const predictionsElement = document.getElementById("predictions");
   const probsContainer = document.createElement("div");
   for (let i = 0; i < classes.length; i++) {
@@ -11,19 +13,20 @@ export const showResult = (classes: {class: string; score: number; }[]) => {
   if (predictionsElement) predictionsElement.appendChild(probsContainer);
 };
 
-export const IMAGE_SIZE = 224;
+export const IMAGE_SIZE = 512;
 
-export const handleFilePicker = (callback: (img: HTMLImageElement) => void) => {
+export const handleFilePicker = (callback: (img: HTMLImageElement) => Promise<void>) => {
+  // Get the file input element
   const fileElement = document.getElementById("file");
   if (!fileElement) return;
 
   fileElement.addEventListener("change", (evt) => {
-    const file = (evt.target as HTMLInputElement).files;
-    if (!file) return;
+    const files = (evt.target as HTMLInputElement).files;
+    if (!files) return;
 
-    const f = file[0];
+    const file = files[0];
 
-    if (!f.type.match("image.*")) return;
+    if (!file.type.match("image.*")) return;
 
     const reader = new FileReader();
     reader.onload = (e) => {
@@ -40,11 +43,11 @@ export const handleFilePicker = (callback: (img: HTMLImageElement) => void) => {
         // loadedimg = img;
       }
 
-      img.onload = () => callback(img);
+      img.onload = async () => await callback(img);
 
       // img.onload = () => predict(img);
     };
-    reader.readAsDataURL(f);
+    reader.readAsDataURL(file);
   });
 };
 
