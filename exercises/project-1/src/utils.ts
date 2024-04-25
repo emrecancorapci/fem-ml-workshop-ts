@@ -2,6 +2,7 @@
 // -----------
 
 import { DetectedObject } from "@tensorflow-models/coco-ssd";
+import { Face } from '@tensorflow-models/face-detection';
 
 export const showResult = (classes: DetectedObject[]) => {
   const predictionsElement = document.getElementById("predictions");
@@ -113,23 +114,6 @@ export const takePicture = (video: HTMLVideoElement, callback: (img: HTMLCanvasE
 
 // Part 3
 // -----------
-
-export interface Face {
-  box: FaceBox;
-  landmarks: FaceLandmark[];
-}
-
-export interface FaceBox {
-  xMin: number;
-  yMin: number;
-  width: number;
-  height: number;
-}
-
-export interface FaceLandmark {
-  x: number;
-  y: number;
-}
 
 export const drawFaceBox = (photo: HTMLCanvasElement, faces: Face[]) => {
   // Draw box around the face detected ⬇️
