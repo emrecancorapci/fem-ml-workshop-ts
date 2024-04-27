@@ -1,50 +1,18 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Transfer learning with TensorFlow.js</title>
-    <link rel="stylesheet" href="styles.css" />
-    <!-- Part 1 -->
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css" />
+    <title>Pre-trained model</title>
   </head>
   <body>
-    <h2>Transfer learning</h2>
-
-    <!-- Part 1 -->
-    <button id="start">Start</button>
-    <div id="webcam-container" display="right: 0; position: absolute"></div>
-    <div id="label-container"></div>
-
-    <!-- Part 2 -->
-    <!-- <div id="status">Loading model...</div>
-
-    <div id="controller" style="display: none">
-      <div>
-        <section>
-          <button id="train">
-            <span id="train-status">TRAIN MODEL</span>
-          </button>
-          <button id="predict">START PREDICTIONS</button>
-        </section>
-
-        <video
-          autoplay
-          playsinline
-          muted
-          id="webcam"
-          width="224"
-          height="224"
-        ></video>
-      </div>
-
-      <div id="buttons-container">
-        <button class="record-button" id="left">Add left sample</button>
-        <p><span id="left-total">0</span> examples</p>
-        <button class="record-button" id="right">Add right sample</button>
-        <p><span id="right-total">0</span> examples</p>
-      </div>
-    </div> -->
-
-    <script type="module" src="part1.js"></script>
+    <div class="tfjs-example-container">
+      <h1>TensorFlow.js: Using a pre-trained model</h1> 
+      <nav style="display: flex; flex-direction: col; justify-content: center; place-items: center; gap: 4rem; height: 100%; width: 100%;">  
+        <a href="/part1/"><h2>Part 1</h2></a>
+        <a href="/part2/"><h2>Part 2</h2></a>
+      </nav>
+    </div>
   </body>
 </html>
