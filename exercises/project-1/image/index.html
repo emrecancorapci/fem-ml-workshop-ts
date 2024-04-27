@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pre-trained model</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body>
+
+<div class="tfjs-example-container">
+  <h1>TensorFlow.js: Using a pre-trained model</h1>
+  <h2><a href="/">Back to the index</a></h2>
+
+  <section id="uploaded-image">
+    <section id="input">
+      <h2>Prediction using an uploaded image</h2>
+      <div id="file-container">
+        <input type="file" id="file" name="file" />
+      </div>
+
+      <div id="loaded-image"></div>
+    </section>
+
+    <section id="predictions">
+      <div class="output"></div>
+
+      <div id="predictions"></div>
+    </section>
+  </section>
+
+  <script defer type="module" src="image.ts"></script>
+</div>
+
+</body>
+
+</html>

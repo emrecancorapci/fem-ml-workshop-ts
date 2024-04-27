@@ -1,9 +1,8 @@
 import '@tensorflow/tfjs';
-// import "@mediapipe/face_detection";
 import '@tensorflow/tfjs-core';
 import '@tensorflow/tfjs-backend-webgl';
 import * as faceDetection from '@tensorflow-models/face-detection';
-import { drawFaceBox, startWebcam, takePicture } from './utils';
+import { drawFaceBox, startWebcam, takePicture } from '../utils';
 
 const init = async () => {
   const webcamButton = document.getElementById('webcam');

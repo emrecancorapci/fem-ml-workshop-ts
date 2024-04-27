@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pre-trained model</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body>
+
+<div class="tfjs-example-container">
+  <h1>TensorFlow.js: Using a pre-trained model</h1>
+  <h2><a href="/">Back to the index</a></h2>
+
+    <section id="webcam-section">
+      <section id="input">
+        <h2>Face detection using an image captured from the webcam</h2>
+
+        <button id="predict" disabled>Predict</button>
+        <button id="webcam">Webcam</button>
+        <button id="pause">Capture</button>
+
+        <video></video>
+        <canvas id="canvas"> </canvas>
+      </section>
+
+      <div id="predictions"></div>
+    </section>
+
+  <script defer type="module" src="face-detection.ts"></script>
+</div>
+
+</body>
+
+</html>

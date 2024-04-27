@@ -1,6 +1,6 @@
 import '@tensorflow/tfjs';
 import * as cocoSsd from '@tensorflow-models/coco-ssd';
-import { showResult, startWebcam, takePicture } from './utils';
+import { showResult, startWebcam, takePicture } from '../utils';
 
 const init = async () => {
   const webcamButton = document.getElementById('webcam');
