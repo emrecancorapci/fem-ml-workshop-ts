@@ -19,5 +19,5 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["part1", "part2"]
+  "include": ["head-tilt", "part2"]
 }
