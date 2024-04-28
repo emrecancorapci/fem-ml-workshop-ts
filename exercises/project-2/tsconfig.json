@@ -19,5 +19,5 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["head-tilt", "part2"]
+  "include": ["head-tilt", "train-model"]
 }
