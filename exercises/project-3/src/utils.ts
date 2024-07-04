@@ -1,7 +1,7 @@
 let clickX = new Array();
 let clickY = new Array();
 let clickDrag = new Array();
-let paint: boolean; // check this
+let paint: boolean = false; // check this
 
 const labels = ["circle", "triangle"];
 const canvas = document.getElementsByTagName("canvas")[0] as HTMLCanvasElement | undefined;
@@ -48,7 +48,7 @@ canvas.addEventListener("mousemove", function onDrawing(e) {
   }
 });
 
-canvas.addEventListener("mouseup", function enDrawing() {
+canvas.addEventListener("mouseup", function endDrawing() {
   paint = false;
 });
 
