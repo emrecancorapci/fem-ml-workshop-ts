@@ -5,10 +5,10 @@ let paint: boolean = false; // check this
 
 const labels = ["circle", "triangle"];
 const canvas = document.getElementsByTagName("canvas")[0] as HTMLCanvasElement | undefined;
-const link = document.getElementById("download-link") as HTMLAnchorElement | undefined;
+const downloadLink = document.getElementById("download-link") as HTMLAnchorElement | undefined;
 
 if (!canvas) throw new Error("Canvas not found");
-if (!link) throw new Error("Link not found");
+if (!downloadLink) throw new Error("Link not found");
 
 const context = canvas.getContext("2d");
 if (!context) throw new Error("Canvas not found");
@@ -20,7 +20,10 @@ export function displayPrediction(label: number) {
   predictionParagraph.textContent = prediction;
 }
 
-export function clearRect(context: CanvasRenderingContext2D, canvas: HTMLCanvasElement) {
+export function clearRect() {
+  if (!context) throw new Error("Canvas not found");
+  if (!canvas) throw new Error("Canvas not found");
+
   context.clearRect(0, 0, canvas.width, canvas.height);
 }
 
@@ -52,11 +55,14 @@ canvas.addEventListener("mouseup", function endDrawing() {
   paint = false;
 });
 
-link.addEventListener(
+downloadLink.addEventListener(
   "click",
   function () {
-    link.href = canvas.toDataURL();
-    link.download = "drawing.png";
+    const imageName = document.getElementById("image-name") as HTMLInputElement;
+    if (!imageName) throw new Error("Image name not found");
+
+    downloadLink.href = canvas.toDataURL();
+    downloadLink.download = `${imageName.value || "image"}.png`;
   },
   false
 );
