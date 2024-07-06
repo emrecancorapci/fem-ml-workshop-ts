@@ -1,4 +1,5 @@
-import tf from '@tensorflow/tfjs';
+import tf from '@tensorflow/tfjs-node';
+import { DENSE_LAYER_UNITS, FILTERS, IMAGE_SIZE, LEARNING_RATE } from './config';
 
 // https://cs231n.github.io/convolutional-networks/
 
@@ -9,18 +10,13 @@ import tf from '@tensorflow/tfjs';
 const kernelSize = [3, 3];
 
 /**
- * Amount of filters to apply to the input image.
- * The more filters, the more features the model can detect.
- */
-const filters = 32;
-
-/**
  * Input shape is the shape of the input image.
  * In this case, it is a `28x28` image with `4` channels.
  * 
  * The `4` channels are the `RGBA` values of the image.
  */
-const inputShape = [28, 28, 4];
+const inputShape = [IMAGE_SIZE, IMAGE_SIZE, 4];
+
 
 /**
  * Number of classes to classify the input image.
@@ -30,16 +26,14 @@ const inputShape = [28, 28, 4];
  */
 const numberOfClasses = 2;
 
-const optimizerLearningRate = 0.0001;
-
-const optimizer = tf.train.adam(optimizerLearningRate);
+const optimizer = tf.train.adam(LEARNING_RATE);
 
 const layers = [
     // Convolutional layer is used to detect features in the input image.
     // This layer creates a convolution kernel that is convolved with the layer input to produce a tensor of outputs.
     tf.layers.conv2d({
         inputShape,
-        filters,
+        filters: FILTERS,
         kernelSize,
         // There are also two different activation layers that Sigmoid and Softmax.
         // Softmax usually used in last layer of the model.
@@ -60,8 +54,9 @@ const layers = [
 
     // Dense layer is a regular densely-connected NN layer.
     // It is used to classify the features extracted by the convolutional layers.
+    // More units in the dense layer means more features to classify the input image.
     tf.layers.dense({
-        units: 10,
+        units: DENSE_LAYER_UNITS,
         activation: 'relu',
     }),
 
