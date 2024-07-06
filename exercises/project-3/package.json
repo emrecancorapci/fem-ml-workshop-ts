@@ -5,9 +5,7 @@
   "type": "module",
   "main": "src/index.ts",
   "scripts": {
-    "node:data": "tsx src/get-data.ts",
-    "node:model": "tsx src/create-model.ts",
-    "node:train": "tsx src/train-drawings.ts",
+    "node:main": "tsx src/main.ts",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
@@ -16,8 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "@tensorflow/tfjs": "^4.20.0",
-    "@tensorflow/tfjs-node": "^4.20.0",
-    "@tensorflow/tfjs-node-gpu": "^4.20.0"
+    "@tensorflow/tfjs-node": "^4.20.0"
   },
   "devDependencies": {
     "@types/node": "^20.14.9",

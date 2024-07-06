@@ -14,9 +14,6 @@ importers:
       '@tensorflow/tfjs-node':
         specifier: ^4.20.0
         version: 4.20.0(seedrandom@3.0.5)
-      '@tensorflow/tfjs-node-gpu':
-        specifier: ^4.20.0
-        version: 4.20.0(seedrandom@3.0.5)
     devDependencies:
       '@types/node':
         specifier: ^20.14.9
@@ -289,10 +286,6 @@ packages:
     resolution: {integrity: sha512-SCHZH29Vyw+Y9eoaJHiaNo6yqM9vD3XCKncoczonRRywejm3FFqddg1AuWAfSE9XoNPE21o9PsknvKLl/Uh+Cg==}
     peerDependencies:
       '@tensorflow/tfjs-core': 4.20.0
-
-  '@tensorflow/tfjs-node-gpu@4.20.0':
-    resolution: {integrity: sha512-CsJU4yR7KCjUUM5Hguur6Z6QpNNFlr02MVK76Lu3lWLpz4ToW5YEYvjrMyRaUF7Y6ipJLQ4G1BbNfA2i8F4Cow==}
-    engines: {node: '>=8.11.0'}
 
   '@tensorflow/tfjs-node@4.20.0':
     resolution: {integrity: sha512-pVSOlzsVqh5ck3aiNPJCltB3ASKjsLqNPvJ28lXn9Xg648U4eHDk8G47m9w4uf0FdVcWDfjPM3hDCbBZ/E2KXg==}
@@ -946,21 +939,6 @@ snapshots:
   '@tensorflow/tfjs-layers@4.20.0(@tensorflow/tfjs-core@4.20.0)':
     dependencies:
       '@tensorflow/tfjs-core': 4.20.0
-
-  '@tensorflow/tfjs-node-gpu@4.20.0(seedrandom@3.0.5)':
-    dependencies:
-      '@mapbox/node-pre-gyp': 1.0.9
-      '@tensorflow/tfjs': 4.20.0(seedrandom@3.0.5)
-      adm-zip: 0.5.12
-      google-protobuf: 3.21.2
-      https-proxy-agent: 2.2.4
-      progress: 2.0.3
-      rimraf: 2.7.1
-      tar: 6.2.1
-    transitivePeerDependencies:
-      - encoding
-      - seedrandom
-      - supports-color
 
   '@tensorflow/tfjs-node@4.20.0(seedrandom@3.0.5)':
     dependencies:
